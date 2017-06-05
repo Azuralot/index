@@ -1,0 +1,5 @@
+<?php
+
+ModuleLoader::load('home');
+
+?>
