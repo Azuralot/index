@@ -3,13 +3,13 @@
 session_start();
 require_once("config.php");
 
-if(!(isset($_GET['page']))) { // przekierowanie do strony głównej
+if(!(isset($_GET['page']))) { 
     
     header("Location: ".SERVER_ADDRESS."home");
     
 } else {
     
-    $mp = new MainPage($_GET['page']); // przekierowanie do podanej strony
+    $mp = new MainPage($_GET['page']); 
     
 }
 
