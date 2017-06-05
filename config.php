@@ -1,7 +1,6 @@
 <?php
 ob_start();
 
-// OKREŚLENIE POŁOŻENIA STRONY W SERWISIE
 $AbsoluteURL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://';
 $dirCat = dirname($_SERVER['PHP_SELF']);
 $AbsoluteURL .= $_SERVER['HTTP_HOST'];
@@ -11,13 +10,11 @@ $slash = substr($AbsoluteURL, -1);
 $NewURL = $slash != '/' ? $AbsoluteURL.'/' : $AbsoluteURL;
 
 
-// STAŁE DLA BAZY DANYCH
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'admin');
 define('DB_PW', 'haslo');
 define('DB_DB', 'gra');
 
-// STAŁA DLA ADRESU I LOKALIZACJI APLIKACJI
 define('SERVER_ADDRESS', $NewURL);
 
 
@@ -25,7 +22,6 @@ set_include_path(get_include_path(). PATH_SEPARATOR . "CLASS");
 set_include_path(get_include_path(). PATH_SEPARATOR . "CLASS/Managers");
 set_include_path(get_include_path(). PATH_SEPARATOR . "LIBRARY");
 
-// Funkcja automatycznie ładująca klasy wg. zapotrzebowania
 
 function __autoload($className) {
     
